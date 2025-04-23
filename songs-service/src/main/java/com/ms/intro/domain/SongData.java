@@ -38,4 +38,6 @@ public class SongData {
 
     @Column(nullable = true)
     String year;
+
+    String genre;
 }
