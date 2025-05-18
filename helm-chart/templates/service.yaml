@@ -4,14 +4,13 @@ metadata:
   name: resources-service
   namespace: {{ .Values.namespace }}
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: resources-service
   ports:
     - port: 8080
       protocol: "TCP"
       targetPort: 8080
-      nodePort: 30001
 ---
 apiVersion: v1
 kind: Service
@@ -19,11 +18,10 @@ metadata:
   name: songs-service
   namespace: {{ .Values.namespace }}
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: songs-app-pod
   ports:
     - port: 8081
       protocol: "TCP"
-      nodePort: 30002
       targetPort: 8081
