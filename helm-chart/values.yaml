@@ -1,0 +1,17 @@
+replicaCount: 1
+
+namespace: k8s-program
+
+resourceService:
+  image: yeldosnarbay/resources-service:1.0.0
+  containerPort: 8080
+
+songService:
+  image: yeldosnarbay/songs-service:1.0.1
+  containerPort: 8080
+
+resourceDb:
+  image: postgres:17
+
+songsDb:
+  image: postgres:17
